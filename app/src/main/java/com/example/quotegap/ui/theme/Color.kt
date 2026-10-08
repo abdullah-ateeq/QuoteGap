@@ -56,8 +56,8 @@ val StatusUnderBudgetBgLight = Color(0xFFF0FDF4)
 val StatusUnderBudgetBorderLight = Color(0xFFBBF7D0)
 
 val StatusUnderBudgetGreenDark = Color(0xFF2DD4BF)
-val StatusUnderBudgetBgDark = Color(0xFF064E3B)
-val StatusUnderBudgetBorderDark = Color(0xFF059669)
+val StatusUnderBudgetBgDark = Color(0xFF062D24)
+val StatusUnderBudgetBorderDark = Color(0xFF0D9488)
 
 // Status Colors: On Budget (Neutral / Slate-Blue)
 val StatusOnBudgetBlueLight = Color(0xFF2563EB)
@@ -65,7 +65,7 @@ val StatusOnBudgetBgLight = Color(0xFFEFF6FF)
 val StatusOnBudgetBorderLight = Color(0xFFBFDBFE)
 
 val StatusOnBudgetBlueDark = Color(0xFF60A5FA)
-val StatusOnBudgetBgDark = Color(0xFF1E3A8A)
+val StatusOnBudgetBgDark = Color(0xFF0F1E36)
 val StatusOnBudgetBorderDark = Color(0xFF2563EB)
 
 // Status Colors: Over Budget (Warning / Red-Rose)
@@ -74,5 +74,5 @@ val StatusOverBudgetBgLight = Color(0xFFFFF1F2)
 val StatusOverBudgetBorderLight = Color(0xFFFECDD3)
 
 val StatusOverBudgetRedDark = Color(0xFFFB7185)
-val StatusOverBudgetBgDark = Color(0xFF4C0519)
+val StatusOverBudgetBgDark = Color(0xFF2E0C12)
 val StatusOverBudgetBorderDark = Color(0xFFBE123C)

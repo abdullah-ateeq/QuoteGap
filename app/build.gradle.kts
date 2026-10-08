@@ -10,7 +10,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.quotegap"
+        applicationId = "com.app.quotegap70"
         minSdk = 24
         targetSdk = 37
         versionCode = 1

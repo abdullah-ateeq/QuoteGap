@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.platform.LocalContext
 import com.example.quotegap.data.model.AppThemeMode
 import com.example.quotegap.data.model.QuoteStatus
@@ -21,6 +22,8 @@ data class StatusColors(
     val statusBackground: Color,
     val statusBorder: Color
 )
+
+val LocalIsDarkTheme = staticCompositionLocalOf { false }
 
 val LocalStatusColors = staticCompositionLocalOf {
     StatusColors(
@@ -75,7 +78,8 @@ private val LightColorScheme = lightColorScheme(
 )
 
 @Composable
-fun getStatusColors(status: QuoteStatus, isDark: Boolean = isSystemInDarkTheme()): StatusColors {
+fun getStatusColors(status: QuoteStatus): StatusColors {
+    val isDark = MaterialTheme.colorScheme.background.luminance() < 0.5f
     return when (status) {
         QuoteStatus.UNDER_BUDGET -> if (isDark) {
             StatusColors(
@@ -142,9 +146,11 @@ fun QuoteGapTheme(
         else -> LightColorScheme
     }
 
-    MaterialTheme(
-        colorScheme = colorScheme,
-        typography = Typography,
-        content = content
-    )
+    androidx.compose.runtime.CompositionLocalProvider(LocalIsDarkTheme provides darkTheme) {
+        MaterialTheme(
+            colorScheme = colorScheme,
+            typography = Typography,
+            content = content
+        )
+    }
 }
